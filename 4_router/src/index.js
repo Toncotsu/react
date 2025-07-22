@@ -13,7 +13,10 @@ import reportWebVitals from './reportWebVitals';
 //import App  from './4_axios/weather';
 //import App  from './5_movie/MovieList';
 //import App  from './6_movie_link/App';
-import App from './9_exercise/App'
+//import App from './9_exercise/App'
+//import App from './9_spring_conn/Conn_test'
+//import App from './9_spring_conn/App'
+import App from './9_spring_conn/App2'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

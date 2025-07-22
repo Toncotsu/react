@@ -4,17 +4,17 @@ import Header from './components/Header';
 import TabButton from './components/TabButton';
 import CoreConcept from './components/CoreConcept';
 import {useState} from 'react';
-
+import {EXAMPLES} from './data.js'
 function App() {
 
-    const [state, setState] = useState('Please click a button');
+    const [selectedTopic, setSelectedTopic] = useState('components');
 
   function handleSelect(selectButton){
       // selectButton => 'component , JSX , props , state 
         
         //console.log('hello-world-selected');
        // console.log({selectButton});
-        setState(selectButton);
+        setSelectedTopic(selectButton);
        
   }
 
@@ -48,7 +48,17 @@ function App() {
             <TabButton onSelect = {() => handleSelect('props')}>props</TabButton> 
             <TabButton onSelect = {() => handleSelect('state')}>state</TabButton> 
           </menu>
-          {state}
+          {! selectedTopic &&  <p> Please select a topic </p> }
+          {selectedTopic ?
+          <div id='content'>
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>
+              {EXAMPLES[selectedTopic].code}
+              </code>
+            </pre>
+          </div> : null}
         </section>
       </main>
     </div>

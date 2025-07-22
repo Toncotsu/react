@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const InputCarry = ({ addCarry }) => {
+    
   const [carry, setCarry] = useState("");
 
   const changeCarry = (e) => setCarry(e.target.value);
