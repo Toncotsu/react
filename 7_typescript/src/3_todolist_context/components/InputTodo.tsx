@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import TodoContext from "../TodoContext";
 
 
-type InputTodoProps = {
-    addTodo : (todo:string) => void;
-}
+// type InputTodoProps = {
+//     addTodo : (todo:string) => void;
+// }
 
-const InputTodo = (props:InputTodoProps) => {
+const InputTodo = () => {
+
+    const value = useContext(TodoContext);
+
     // [0] 화면 구성 확인
     const [todo, setTodo] = useState('');
 
@@ -14,7 +18,7 @@ const InputTodo = (props:InputTodoProps) => {
     }
 
     const addHandler = ()=> {
-        props.addTodo(todo);
+        value?.actions.addTodo(todo);
         setTodo('');
     }
 

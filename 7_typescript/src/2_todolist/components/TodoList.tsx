@@ -2,13 +2,13 @@ import TodoListItem from "./TodoListItem";
 
 import {TodoListItemType} from '../TodoContext';
 
-type TodoListType = {
+type TodoListProps = {
     todoList :  Array<TodoListItemType>;
     deleteTodo : (no:number) => void ;
     toggleDone : (no:number) => void ;
 }
 
-const TodoList = (props:TodoListType) => {
+const TodoList = (props:TodoListProps) => {
 
     let items = props.todoList.map((item)=>{
         return <TodoListItem key={item.no} 
